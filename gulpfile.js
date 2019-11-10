@@ -7,14 +7,16 @@ const plumber = require('gulp-plumber');
 const autoprefixer = require('autoprefixer');
 const copy = require('gulp-copy');
 const rigger = require('gulp-rigger');
+const scss = require('gulp-sass');
 
 gulp.task("clean", function () {
     return del("build");
 });
 
 gulp.task("css", function () {
-    return gulp.src("src/styles.css")
+    return gulp.src("src/styles/*")
         .pipe(plumber())
+        .pipe(scss({ outputStyle: 'expanded' }))
         .pipe(postcss([
             autoprefixer()
         ]))
@@ -57,7 +59,7 @@ gulp.task("server", function () {
     });
 
 
-    gulp.watch("src/*.css", gulp.series("css"));
+    gulp.watch("src/styles/*.{css, scss}", gulp.series("css"));
     gulp.watch("src/img/*.{png,jpeg,jpg,svg}", gulp.series("img", "refresh"));
     gulp.watch("src/*.html", gulp.series("html", "refresh"));
     gulp.watch("src/*.js", gulp.series("js", "refresh"));
