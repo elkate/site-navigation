@@ -14,7 +14,7 @@ gulp.task("clean", function () {
 });
 
 gulp.task("css", function () {
-    return gulp.src("src/styles/*")
+    return gulp.src("src/styles/main.scss")
         .pipe(plumber())
         .pipe(scss({ outputStyle: 'expanded' }))
         .pipe(postcss([
