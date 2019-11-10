@@ -62,6 +62,7 @@ gulp.task("server", function () {
     gulp.watch("src/styles/*.{css, scss}", gulp.series("css"));
     gulp.watch("src/img/*.{png,jpeg,jpg,svg}", gulp.series("img", "refresh"));
     gulp.watch("src/*.html", gulp.series("html", "refresh"));
+    gulp.watch("src/templates/*.html", gulp.series("html", "refresh"));
     gulp.watch("src/*.js", gulp.series("js", "refresh"));
 });
 
