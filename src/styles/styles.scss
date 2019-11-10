@@ -12,15 +12,6 @@ nav .breadcrumb {
     margin-bottom: 0;
 }
 
-
-.vnav-flex{
-    display: flex;
-    justify-content: space-between;
-}
-.vnav-text {
-    width: calc(100vw - 300px);
-}
-
 .hnav {
     .nav-container {
         display: block;
@@ -34,3 +25,8 @@ nav .breadcrumb {
     }
 }
 
+.hide-nav .wrapper {
+    position: relative;
+    height: calc(100vh - 112px);
+    overflow: hidden;
+}

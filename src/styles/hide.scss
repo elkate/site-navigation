@@ -95,7 +95,7 @@
   }
 
   .nav {
-    position: fixed;
+    position: absolute;
     top: 0;
     right: 0;
     bottom: 0;
@@ -177,6 +177,7 @@
     visibility: hidden;
     transform: translate(-50%, -50%);
     transition: 0s linear 0.25s;
+    max-height: calc(100vh - 112px);
 
     &.is-active {
       visibility: visible;
@@ -186,6 +187,7 @@
       .nav__item {
         a {
           opacity: 1;
+          font-size: 2rem;
           transform: translateY(0);
           transition: {
             property: transform, opacity, color;
