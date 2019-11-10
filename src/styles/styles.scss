@@ -11,3 +11,11 @@ nav .breadcrumb {
 .breadcrumb {
     margin-bottom: 0;
 }
+
+.vnav-flex{
+    display: flex;
+    justify-content: space-between;
+}
+.vnav-text {
+    width: calc(100vw - 300px);
+}
