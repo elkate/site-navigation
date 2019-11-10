@@ -1,10 +1,21 @@
 @import "//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css";
 @import "https://fonts.googleapis.com/css?family=Titillium+Web:300";
 .vnav {
-  position: relative;
-  display: block;
-  height: calc(100vh - 112px);
-  margin-top: 0;
+
+  .flex {
+    display: flex;
+  }
+
+  .wrapper {
+    position: relative;
+    height: calc(100vh - 112px);
+    margin-top: 0;
+  }
+
+  .text {
+    margin-left: 70px;
+  }
+
 
   .fa-2x {
     font-size: 2em
