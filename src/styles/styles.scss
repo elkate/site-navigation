@@ -11,3 +11,18 @@ nav .breadcrumb {
 .breadcrumb {
     margin-bottom: 0;
 }
+
+
+.hnav {
+    .nav-container {
+        display: block;
+        margin: 10px auto;
+        position: relative;
+        min-height: 50px;
+    }
+
+    .text {
+        display: block;
+    }
+}
+
