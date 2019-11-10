@@ -1,0 +1,8 @@
+.page-header {
+    position: sticky;
+    top: 0;
+}
+
+nav .breadcrumb {
+    border-radius: 0;
+}
