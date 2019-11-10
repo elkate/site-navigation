@@ -8,6 +8,8 @@ const autoprefixer = require('autoprefixer');
 const copy = require('gulp-copy');
 const rigger = require('gulp-rigger');
 const scss = require('gulp-sass');
+var uglify = require("gulp-uglify");
+var concat = require('gulp-concat');
 
 gulp.task("clean", function () {
     return del("build");
@@ -37,9 +39,12 @@ gulp.task('html', function() {
         .pipe(gulp.dest("build"))
 });
 
-gulp.task('js', function() {
-    return gulp
-        .src("src/*.js")
+gulp.task("js", function() {
+    return gulp.src([
+        "src/js/*.js",
+    ])
+        .pipe(concat('main.js'))
+        .pipe(uglify())
         .pipe(gulp.dest("build"))
 });
 
@@ -59,11 +64,11 @@ gulp.task("server", function () {
     });
 
 
-    gulp.watch("src/styles/*.{css, scss}", gulp.series("css"));
+    gulp.watch("src/styles/*.scss", gulp.series("css"));
     gulp.watch("src/img/*.{png,jpeg,jpg,svg}", gulp.series("img", "refresh"));
     gulp.watch("src/*.html", gulp.series("html", "refresh"));
     gulp.watch("src/templates/*.html", gulp.series("html", "refresh"));
-    gulp.watch("src/*.js", gulp.series("js", "refresh"));
+    gulp.watch("src/js/*.js", gulp.series("js", "refresh"));
 });
 
 gulp.task("build", gulp.series(
