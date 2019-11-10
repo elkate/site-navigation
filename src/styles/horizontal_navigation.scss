@@ -1,0 +1,661 @@
+@import "compass/css3";
+
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+// 'SMART' sizing vars
+$nav-width: 8px;
+$nav-height: 5px;
+$drop-width: 180px;
+$drop-height: 5px;
+$tri-size: 4px;@import "compass/css3";
+
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+// 'SMART' sizing vars
+$nav-width: 8px;
+$nav-height: 5px;
+$drop-width: 180px;
+$drop-height: 5px;
+$tri-size: 4px;
+// 'SMART' style vars
+$gradient-intensity: 1.75;
+$bg-color: #666;
+$drop-bg: $bg-color;
+$accent-color: #000;
+$highlight-color: lighten($bg-color, 60%);
+$text-color: #fff;
+$drop-color: $text-color;
+$text-hover: #fff;
+$separator: 1px solid $accent-color;
+$drop-separator: lighten($drop-bg, 40%);
+$tri-color: darken($accent-color, 50%);
+$shadow-r: 50;
+$shadow-g: 50; // wtb variable concatenation
+$shadow-b: 50;
+$border-radius: 4px;
+//
+// computational variables (don't touch)
+//
+$not-parent-margin: ($nav-width * 2);
+$last-width: (90 + ($nav-width * 2.67));
+$left-adjust: ($nav-width / 1.5);
+$drop-anchor-width: ($drop-width - ($nav-width / 2));
+$drop-position: ($nav-height - 1);
+$hover-tri-size: ($tri-size + 1);
+$gradient-t: ($gradient-intensity / 10);
+$gradient-i: ($gradient-intensity / 20);
+//
+// end
+//
+
+// independent vars
+$main-font: "Open Sans", Arial;
+$text-transform: initial;
+$letter-spacing: 1px;
+$font-weight: 400;
+
+%myVars {
+  font-family: $main-font;
+  text-transform: $text-transform;
+  letter-spacing: $letter-spacing;
+  font-weight: $font-weight;
+}
+//
+
+// js class -- hover state
+.hovered {
+  background-color: $accent-color !important;
+  color: $text-hover !important;
+  @include transition(background-color 0.2s ease-in 0s !important);
+  &::after {
+    border-color: transparent transparent $bg-color transparent !important;
+    @include transform(rotate(180deg) !important);
+  }
+}
+// js class -- dropdown state
+.closed {
+  ul {
+    box-shadow: none !important;
+    margin-top: 0px !important;
+    li {
+      margin-top: -40px !important;
+      height: 0px !important;
+    }
+  }
+}
+
+// nav structure
+@mixin nav {
+  > ul {
+    float: left;
+    list-style: none;
+    line-height: 1.3;
+    .parent {
+      > a::after {
+        position: relative;
+        display: inline-block;
+        content: "";
+        width: 0;
+        height: 0;
+        top: -2px;
+        margin: 0 $nav-width 0 $nav-width;
+        border-style: solid;
+        border-width: 0 $tri-size $tri-size $tri-size;
+        border-color: transparent transparent $accent-color transparent;
+        color: $tri-color;
+        @include transform(rotate(0deg));
+        @include transition(transform 0.4s ease-out 0.2s, border-color 0.4s ease-out 0s);
+      }
+    }
+
+    > li {
+      float: left;
+      &:first-child > a {
+        @include border-top-left-radius($border-radius);
+        @include border-bottom-left-radius($border-radius);
+        border: none;
+      }
+      &:last-child {
+        width: $last-width;
+        > a {
+          @include border-top-right-radius($border-radius);
+          @include border-bottom-right-radius($border-radius);
+        }
+      }
+      &:not(.parent) > a {
+        padding-right: $not-parent-margin;
+      }
+      a {
+        @include background-image(
+                        linear-gradient(
+                                        top,
+                                        rgba(255, 255, 255, $gradient-t),
+                                        rgba(255, 255, 255, $gradient-i) 30%,
+                                        rgba(0, 0, 0, $gradient-i) 60%,
+                                        rgba(0, 0, 0, $gradient-t)
+                        )
+        );
+        @include transition (background-color .20s ease-out .20s, color .20s ease-out 0s);
+        padding: $nav-height 0 $nav-height $left-adjust;
+        background-color: $bg-color;
+        border-left: $separator;
+        text-decoration: none;
+        color: $text-color;
+        // TODO - CSS3 FALLBACK TRANSITION (not working)
+        //> &:hover {
+        //  background-color: $separator;
+        //  color: #333;
+        //  @include transition (background-color .20s ease-in 0s);
+        //}
+      }
+    }
+  }
+}
+
+// dropdown structure for nav
+@mixin navDropdown {
+  list-style: none;
+  margin-top: $drop-position;
+  position: absolute;
+  width: $drop-width;
+  padding: 0;
+  overflow: hidden;
+  // TODO - Fix border radius delay
+  /*@include border-radius(0px 0px $border-radius $border-radius);*/
+  @include transition(margin-top 1s);
+  animation: margin-push 1s infinite;
+  -webkit-animation: margin-push 1s infinite;
+  @include box-sizing("border-box");
+  @include box-shadow (0px 15px 20px 0px rgba($shadow-r, $shadow-g, $shadow-b, 0.4),
+          12px 15px 15px -4px rgba($shadow-r, $shadow-g, $shadow-b, 0.4),
+          -12px 15px 15px -4px rgba($shadow-r, $shadow-g, $shadow-b, 0.4));
+
+  &::before {
+    position: absolute;
+    left: 50%;
+    margin: 1px 0 0 -50px;
+    content: "";
+    width: 0px;
+    height: 0px;
+    border-style: solid;
+    border-width: 0 10px 10px 10px;
+    border-color: transparent transparent $bg-color transparent;
+  }
+
+  li {
+    width: 100%;
+    height: (($drop-height * 2) + 20px);
+    vertical-align: top;
+    overflow: hidden;
+    cursor: pointer;
+    @include transition(margin-top 0.5s, height 0.5s);
+    animation: margin-height-push 0.5s infinite;
+    -webkit-animation: margin-height-push 0.5s infinite;
+    @include box-sizing("border-box");
+    &:first-child {
+      margin-top: 10px;
+      > a {
+        border: none;
+      }
+    }
+    &:last-child {
+      // Border patches height related animation issue that // includes a visual flash before the dropdown has   // fully expanded
+      border-bottom: 1px solid $drop-bg;
+    }
+
+    a {
+      background: $drop-bg;
+      color: $drop-color;
+      position: absolute;
+      display: block;
+      padding-top: $drop-height;
+      padding-bottom: $drop-height;
+      padding-left: ($nav-width / 2);
+      padding-right: 0;
+      width: $drop-anchor-width;
+      border-top: 1px solid $drop-separator;
+      border-left: none;
+      &:hover {
+        @include box-shadow(inset 0 0 10px $highlight-color);
+      }
+    }
+  }
+}
+
+// myFile.scss
+#mobile-nav {
+  @extend %myVars;
+  @include nav;
+  .dropdown {
+    @include navDropdown;
+  }
+}
+//
+
+/*#menu-toggle {
+    display: none;
+    font-size: 2em;
+    width: 100%;
+    @include filter-gradient(#d34144, #b50c0f, vertical);
+    @include background-image(linear-gradient(top,  #d34144 0%,#d34144 18%,#b50c0f 100%));
+}*/
+
+/*@media all and (max-width: 959px) {
+    #mobile-nav > ul {
+        margin: 13px 20px 0 0;
+        right: 0;
+        background: #333;
+        height: inherit;
+        padding: 0;
+        position: relative;
+        z-index: 50;
+        > li:first-child a, li:last-child a {
+            @include border-radius(0px);
+        }
+    }
+    #mobile-nav::before {
+            content: '';
+            width: 100%;
+            padding: 21px 0;
+            background-color: #333;
+            position: absolute;
+            left: 0;
+            right: 0;
+            z-index: 1;
+        }
+}*/
+
+/*@media all and (max-width: 600px) {
+    .dropdown {
+      position: relative;
+      left: 0;
+      z-index: auto;
+      margin: 0;
+      display: block;
+      width: 100%;
+      border-radius: 0;
+      &::before {
+        display: none;
+      }
+      li {
+        width: 90%;
+        height: 48px;
+        float: right;
+        &:first-child {
+            margin-top: 0;
+        }
+      }
+    }
+    #menu-toggle {
+        display: block;
+        padding: .5em 0;
+        text-indent: 20px;
+        text-decoration: none;
+        cursor: pointer;
+        user-select: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -o-user-select: none;
+    }
+    #mobile-nav {
+        &::before {
+            display: none;
+            content: '';
+        }
+        > ul {
+            display: none;
+            float: initial;
+            margin: 0 !important;
+            > li {
+                width: 100%;
+                float: initial;
+                &:first-child > a {
+                    border-left: none;
+                }
+                > a {
+                    border-top: 1px solid $separator;
+                }
+                a {
+                    padding: 0;
+                    width: 100%;
+                    line-height: 3;
+                    display: block;
+                    text-indent: 20px;
+                    &:hover {
+                        text-shadow: none;
+                        background: initial;
+                        color: #fff;
+                    }
+                }
+            }
+        }
+    }
+}*/
+
+// 'SMART' style vars
+$gradient-intensity: 1.75;
+$bg-color: #666;
+$drop-bg: $bg-color;
+$accent-color: #000;
+$highlight-color: lighten($bg-color, 60%);
+$text-color: #fff;
+$drop-color: $text-color;
+$text-hover: #fff;
+$separator: 1px solid $accent-color;
+$drop-separator: lighten($drop-bg, 40%);
+$tri-color: darken($accent-color, 50%);
+$shadow-r: 50;
+$shadow-g: 50; // wtb variable concatenation
+$shadow-b: 50;
+$border-radius: 4px;
+//
+// computational variables (don't touch)
+//
+$not-parent-margin: ($nav-width * 2);
+$last-width: (90 + ($nav-width * 2.67));
+$left-adjust: ($nav-width / 1.5);
+$drop-anchor-width: ($drop-width - ($nav-width / 2));
+$drop-position: ($nav-height - 1);
+$hover-tri-size: ($tri-size + 1);
+$gradient-t: ($gradient-intensity / 10);
+$gradient-i: ($gradient-intensity / 20);
+//
+// end
+//
+
+
+// independent vars
+$main-font: 'Open Sans', Arial;
+$text-transform: initial;
+$letter-spacing: 1px;
+$font-weight: 400;
+
+%myVars {
+  font-family: $main-font;
+  text-transform: $text-transform;
+  letter-spacing: $letter-spacing;
+  font-weight: $font-weight;
+}
+//
+
+
+// js class -- hover state
+.hovered {
+  background-color: $accent-color !important;
+  color: $text-hover !important;
+  @include transition(background-color .20s ease-in 0s !important);
+  &::after {
+    border-color: transparent transparent $bg-color transparent !important;
+    @include transform(rotate(180deg) !important);
+  }
+}
+// js class -- dropdown state
+.closed {
+  ul {
+    box-shadow: none !important;
+    margin-top: 0px !important;
+    li {
+      margin-top: -40px !important;
+      height: 0px !important;
+    }
+  }
+}
+
+
+// nav structure
+@mixin nav {
+  > ul {
+    float: left;
+    list-style: none;
+    line-height: 1.3;
+    .parent {
+      > a::after {
+        position: relative;
+        display: inline-block;
+        content: "";
+        width: 0;
+        height: 0;
+        top: -2px;
+        margin: 0 $nav-width 0 $nav-width;
+        border-style: solid;
+        border-width: 0 $tri-size $tri-size $tri-size;
+        border-color: transparent transparent $accent-color transparent;
+        color: $tri-color;
+        @include transform(rotate(0deg));
+        @include transition(transform .4s ease-out .20s, border-color .4s ease-out 0s);
+      }
+    }
+
+    > li {
+      float: left;
+      &:first-child > a {
+        @include border-top-left-radius($border-radius);
+        @include border-bottom-left-radius($border-radius);
+        border: none;
+      }
+      &:last-child {
+        width: $last-width;
+        > a {
+          @include border-top-right-radius($border-radius);
+          @include border-bottom-right-radius($border-radius);
+        }
+      }
+      &:not(.parent) > a {
+        padding-right: $not-parent-margin;
+      }
+      a {
+        @include background-image(
+                        linear-gradient(
+                                        top,
+                                        rgba(255, 255, 255, $gradient-t),
+                                        rgba(255, 255, 255, $gradient-i) 30%,
+                                        rgba(0, 0, 0, $gradient-i) 60%,
+                                        rgba(0, 0, 0, $gradient-t)
+                        )
+        );
+        @include transition (background-color .20s ease-out .20s, color .20s ease-out 0s);
+        padding: $nav-height 0 $nav-height $left-adjust;
+        background-color: $bg-color;
+        border-left: $separator;
+        text-decoration: none;
+        color: $text-color;
+        // TODO - CSS3 FALLBACK TRANSITION (not working)
+        //> &:hover {
+        //  background-color: $separator;
+        //  color: #333;
+        //  @include transition (background-color .20s ease-in 0s);
+        //}
+      }
+    }
+  }
+}
+
+// dropdown structure for nav
+@mixin navDropdown {
+  list-style: none;
+  margin-top: $drop-position;
+  position: absolute;
+  width: $drop-width;
+  padding: 0;
+  overflow: hidden;
+  // TODO - Fix border radius delay
+  /*@include border-radius(0px 0px $border-radius $border-radius);*/
+  @include transition(margin-top 1s);
+  animation: margin-push 1s infinite;
+  -webkit-animation: margin-push 1s infinite;
+  @include box-sizing("border-box");
+  @include box-shadow
+  (
+                  0px 15px 20px 0px rgba($shadow-r, $shadow-g, $shadow-b, 0.4),
+                  12px 15px 15px -4px rgba($shadow-r, $shadow-g, $shadow-b, 0.4),
+                  -12px 15px 15px -4px rgba($shadow-r, $shadow-g, $shadow-b, 0.4)
+  );
+
+  &::before {
+    position: absolute;
+    left: 50%;
+    margin: 1px 0 0 -50px;
+    content: "";
+    width: 0px;
+    height: 0px;
+    border-style: solid;
+    border-width: 0 10px 10px 10px;
+    border-color: transparent transparent $bg-color transparent;
+  }
+
+  li {
+    width: 100%;
+    height: (($drop-height * 2) + 20px);
+    vertical-align: top;
+    overflow: hidden;
+    cursor: pointer;
+    @include transition(margin-top 0.5s, height 0.5s);
+    animation: margin-height-push 0.5s infinite;
+    -webkit-animation: margin-height-push 0.5s infinite;
+    @include box-sizing("border-box");
+    &:first-child {
+      margin-top: 10px;
+      > a {
+        border: none;
+      }
+    }
+    &:last-child {
+      // Border patches height related animation issue that // includes a visual flash before the dropdown has   // fully expanded
+      border-bottom: 1px solid $drop-bg;
+    }
+
+    a {
+      background: $drop-bg;
+      color: $drop-color;
+      position: absolute;
+      display: block;
+      padding-top: $drop-height;
+      padding-bottom: $drop-height;
+      padding-left: ($nav-width / 2);
+      padding-right: 0;
+      width: $drop-anchor-width;
+      border-top: 1px solid $drop-separator;
+      border-left: none;
+      &:hover {
+        @include box-shadow(inset 0 0 10px $highlight-color);
+      }
+    }
+  }
+}
+
+
+
+// myFile.scss
+#mobile-nav {
+  @extend %myVars;
+  @include nav;
+  .dropdown {
+    @include navDropdown;
+  }
+}
+//
+
+
+
+/*#menu-toggle {
+    display: none;
+    font-size: 2em;
+    width: 100%;
+    @include filter-gradient(#d34144, #b50c0f, vertical);
+    @include background-image(linear-gradient(top,  #d34144 0%,#d34144 18%,#b50c0f 100%));
+}*/
+
+
+/*@media all and (max-width: 959px) {
+    #mobile-nav > ul {
+        margin: 13px 20px 0 0;
+        right: 0;
+        background: #333;
+        height: inherit;
+        padding: 0;
+        position: relative;
+        z-index: 50;
+        > li:first-child a, li:last-child a {
+            @include border-radius(0px);
+        }
+    }
+    #mobile-nav::before {
+            content: '';
+            width: 100%;
+            padding: 21px 0;
+            background-color: #333;
+            position: absolute;
+            left: 0;
+            right: 0;
+            z-index: 1;
+        }
+}*/
+
+/*@media all and (max-width: 600px) {
+    .dropdown {
+      position: relative;
+      left: 0;
+      z-index: auto;
+      margin: 0;
+      display: block;
+      width: 100%;
+      border-radius: 0;
+      &::before {
+        display: none;
+      }
+      li {
+        width: 90%;
+        height: 48px;
+        float: right;
+        &:first-child {
+            margin-top: 0;
+        }
+      }
+    }
+    #menu-toggle {
+        display: block;
+        padding: .5em 0;
+        text-indent: 20px;
+        text-decoration: none;
+        cursor: pointer;
+        user-select: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -o-user-select: none;
+    }
+    #mobile-nav {
+        &::before {
+            display: none;
+            content: '';
+        }
+        > ul {
+            display: none;
+            float: initial;
+            margin: 0 !important;
+            > li {
+                width: 100%;
+                float: initial;
+                &:first-child > a {
+                    border-left: none;
+                }
+                > a {
+                    border-top: 1px solid $separator;
+                }
+                a {
+                    padding: 0;
+                    width: 100%;
+                    line-height: 3;
+                    display: block;
+                    text-indent: 20px;
+                    &:hover {
+                        text-shadow: none;
+                        background: initial;
+                        color: #fff;
+                    }
+                }
+            }
+        }
+    }
+}*/
