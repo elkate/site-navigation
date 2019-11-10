@@ -27,11 +27,11 @@
   }
 
   // Colors
-  $primary: #9ac6ac;
+  $primary: white;
   $primary-ultralight: mix(white, $primary, 80%);
   $primary-light: mix(white, $primary, 25%);
-  $primary-dark: mix(black, $primary, 25%);
-  $primary-ultradark: mix(black, $primary, 80%);
+  $primary-dark: mix(#4e567e, $primary, 25%);
+  $primary-ultradark: mix(#4e567e, $primary, 80%);
   $black: #222222;
   $white: #eeeeee;
 
