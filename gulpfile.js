@@ -6,6 +6,7 @@ const del = require('del');
 const plumber = require('gulp-plumber');
 const autoprefixer = require('autoprefixer');
 const copy = require('gulp-copy');
+const rigger = require('gulp-rigger');
 
 gulp.task("clean", function () {
     return del("build");
@@ -30,6 +31,7 @@ gulp.task("img", function () {
 gulp.task('html', function() {
     return gulp
         .src("src/*.html")
+        .pipe(rigger())
         .pipe(gulp.dest("build"))
 });
 
