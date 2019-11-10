@@ -12,6 +12,7 @@ nav .breadcrumb {
     margin-bottom: 0;
 }
 
+
 .vnav-flex{
     display: flex;
     justify-content: space-between;
@@ -19,3 +20,17 @@ nav .breadcrumb {
 .vnav-text {
     width: calc(100vw - 300px);
 }
+
+.hnav {
+    .nav-container {
+        display: block;
+        margin: 10px auto;
+        position: relative;
+        min-height: 50px;
+    }
+
+    .text {
+        display: block;
+    }
+}
+
