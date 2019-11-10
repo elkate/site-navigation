@@ -44,7 +44,6 @@ gulp.task("js", function() {
         "src/js/*.js",
     ])
         .pipe(concat('main.js'))
-        .pipe(uglify())
         .pipe(gulp.dest("build"))
 });
 
