@@ -23,7 +23,7 @@ gulp.task("css", function () {
             autoprefixer()
         ]))
         .pipe(minify())
-        .pipe(gulp.dest("build"))
+        .pipe(gulp.dest("build/css"))
         .pipe(server.stream());
 });
 
@@ -44,7 +44,7 @@ gulp.task("js", function() {
         "src/js/*.js",
     ])
         .pipe(concat('main.js'))
-        .pipe(gulp.dest("build"))
+        .pipe(gulp.dest("build/js"))
 });
 
 
