@@ -4,29 +4,6 @@
     z-index: 1;
 }
 
-nav .breadcrumb {
-    border-radius: 0;
-}
-
-.breadcrumb {
-    margin-bottom: 0;
-}
-
-.hnav {
-    .nav-container {
-        display: block;
-        margin: 10px auto;
-        position: relative;
-        min-height: 50px;
-    }
-
-    .text {
-        display: block;
-    }
-}
-
-.hide-nav .wrapper {
-    position: relative;
-    height: calc(100vh - 112px);
+body {
     overflow: hidden;
 }

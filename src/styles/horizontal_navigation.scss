@@ -1,9 +1,17 @@
 
 .hnav {
+    height: 100vh;
+    background: #e9edf5;
+    position: relative;
+
+    .text {
+        margin-bottom: 20px;
+    }
+
     .Navigation{
         height: 50px;
         padding: 0;
-        margin: 0;
+        margin: 20px 0 0 -10px;
         position: absolute;
     }
 

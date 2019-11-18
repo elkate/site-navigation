@@ -1,0 +1,30 @@
+.theory {
+  width: 100vw;
+  height: auto;
+
+  h2 {
+    margin-bottom: 50px;
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      height: 4px;
+      bottom: -8px;
+      left: 0;
+      width: 614px;
+      background-color: #ff8a00;
+    }
+
+  }
+
+  .theory__list {
+    list-style: none;
+
+    &-item {
+      padding: 5px 0;
+    }
+  }
+}
+
+

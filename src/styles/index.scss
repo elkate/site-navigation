@@ -1,11 +1,23 @@
 .main-page {
-  background: #100e17;
   width: 100vw;
   height: 100vh;
   font-family: Rubik, Tahoma, sans-serif;
   overflow-x: hidden;
 
-  main {
+  .main-header {
+    background: #100e17;
+  }
+
+  h2 {
+    padding-top: 60px;
+    font-weight: 700;
+    //text-transform: uppercase;
+    color: #100e17;
+    margin-bottom: 50px;
+    //color: #ff8a00;
+  }
+
+  .site-menu {
     width: 100vw;
     height: 100vh;
     background: #e9edf5;
@@ -13,14 +25,6 @@
 
     @media (max-width: 1100px) {
       height: auto;
-    }
-
-    h2 {
-      padding-top: 60px;
-      font-weight: 700;
-      //text-transform: uppercase;
-      color: #100e17;
-      //color: #ff8a00;
     }
 
     .main-list {
