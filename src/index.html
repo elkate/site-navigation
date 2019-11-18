@@ -11,15 +11,212 @@
         <a href="#main" class="main-link"></a>
     </header>
     <main id="main">
+        <section class="site-menu">
+            <div class="container">
+                <h2>Что вы хотите посмотреть?</h2>
+                <ul class="main-list">
+                    <li class="main-list-item"><a href="function-navigation.html" >Теория</a></li>
+                    <li class="main-list-item"><a href="function-navigation.html">Виды</a></li>
+                    <li class="main-list-item"><a href="function-navigation.html">Примеры</a></li>
+                </ul>
+            </div>
+        </section>
+        <section class="theory">
+            <div class="container">
+                <h2>Навигационные системы веб-сайтов</h2>
+                <p>По своим функциям система навигации делится на следующие виды:</p>
+                <ul class="theory__list">
+                    <li class="theory__list-item"><b>Языковая</b> – навигация, отвечающая за языковой интерфейс и отображение контента на выбранном пользователем языке</li>
+                    <li class="theory__list-item"><b>Основная</b> – это наиболее важные разделы сайта, как правило меню.</li>
+                    <li class="theory__list-item"><b>Глобальная</b> – это те ссылки, которые должны быть видны с любой страницы сайта, например ссылка на главную.</li>
+                    <li class="theory__list-item"><b>Рекламная</b> – ссылки для привлечения посетителей на рекламные страницы сайта с расположением товаров и услуг</li>
+                    <li class="theory__list-item"><b>Тематическая</b> – навигация по страницам сайта одной определенной тематики (рубрики)</li>
+                    <li class="theory__list-item"><b>Текстовая</b> – гиперссылки из текста на странице. С точки зрения юзабилити, они нужны для направления пользователя к упомянутому в тексте материалу. С точки зрения оптимизации – это грамотная перелинковка сайта</li>
+                    <li class="theory__list-item"><b>Указательная</b> – по-другому, справочная. Гиперссылка указывает, в какой области сайта сейчас находится посетитель</li>
+                    <li class="theory__list-item"><b>Географическая</b> – используется на сайтах, где имеются разделы, посвященные разным странам</li>
+                </ul>
+                <p>По визуальному оформлению выделяют следующие виды навигации:</p>
+                <ul class="theory__list">
+                    <li class="theory__list-item"><b>Текстовая</b> – совпадает с определением текстовой в функциональном плане. Это, пожалуй, самый древний вид навигации.</li>
+                    <li class="theory__list-item"><b>Графическая</b> – сейчас наиболее популярный вид навигации с графическим отображением, применяется для всех видов функциональной навигации.</li>
+                    <li class="theory__list-item"><b>HTML-формы</b> – помогают в экономии места с помощью выпадающих или открывающихся элементов.</li>
+                    <li class="theory__list-item"><b>Java и Flash технологии </b> – с помощью них можно организовать определенную реакцию на действия при наведении курсора, нажатии кнопок мыши или клавиатуры</li>
+                </ul>
+            </div>
+        </section>
+        <div class="example">
+            <section class="hnav">
+                <div class="container nav-container">
+                    <h2>Горизонтальная навигация</h2>
+                    <div>
+                        Горизонтальная навигационная панель в верхней части экрана является наиболее распространенным видом
+                        расположения главного меню. Этот тип навигации состоит из горизонтального списка разделов сайта, обычно
+                        именуемых одним или двумя словами каждый. Он может быть создан с графикой или прямым текстом HTML.
+                    </div>
+                    <div id="Navigation">
+                        <ul class="Navigation">
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">About</a></li>
+                            <li><a href="#">My Portfolio</a>
+                                <ul>
+                                    <li><a href="#">Web Development</a></li>
+                                    <li><a href="#">Motion Graphics</a></li>
+                                    <li><a href="#">Flash Animation</a></li>
+                                    <li><a href="#">Logo Design</a></li>
+                                    <li><a href="#">Photography</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">Services</a></li>
+                            <li><a href="#">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <section class="vnav">
+                <div class="container">
+                    <h2>Вертикальная навигация</h2>
+                    <div class="flex">
+                        <div class="wrapper">
+                            <nav class="main-menu">
+                                <ul>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa fa-home fa-2x"></i>
+                                            <span class="nav-text">
+                                Главная
+                            </span>
+                                        </a>
+                                    </li>
+                                    <li class="has-subnav">
+                                        <a href="#">
+                                            <i class="fa fa-laptop fa-2x"></i>
+                                            <span class="nav-text">
+                                Компоненты
+                            </span>
+                                        </a>
 
-        <div class="container">
-            <h2>Что вы хотите посмотреть?</h2>
-            <ul class="main-list">
-                <li class="main-list-item"><a href="function-navigation.html" >Теория</a></li>
-                <li class="main-list-item"><a href="function-navigation.html">Виды</a></li>
-                <li class="main-list-item"><a href="function-navigation.html">Примеры</a></li>
-            </ul>
+                                    </li>
+                                    <li class="has-subnav">
+                                        <a href="#">
+                                            <i class="fa fa-list fa-2x"></i>
+                                            <span class="nav-text">
+                                Формы
+                            </span>
+                                        </a>
+
+                                    </li>
+                                    <li class="has-subnav">
+                                        <a href="#">
+                                            <i class="fa fa-folder-open fa-2x"></i>
+                                            <span class="nav-text">
+                                Страницы
+                            </span>
+                                        </a>
+
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa fa-bar-chart-o fa-2x"></i>
+                                            <span class="nav-text">
+                                Графики
+                            </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa fa-font fa-2x"></i>
+                                            <span class="nav-text">
+                               Варианты
+                            </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa fa-table fa-2x"></i>
+                                            <span class="nav-text">
+                                Таблицы
+                            </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa fa-map-marker fa-2x"></i>
+                                            <span class="nav-text">
+                                Карты
+                            </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa fa-info fa-2x"></i>
+                                            <span class="nav-text">
+                                Документация
+                            </span>
+                                        </a>
+                                    </li>
+                                </ul>
+
+                                <ul class="logout">
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa fa-power-off fa-2x"></i>
+                                            <span class="nav-text">
+                                Выход
+                            </span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <div class="text">
+                            Вертикальная навигационная панель также довольно распространена. Она полезна для сайтов, имеющих более полный
+                            список разделов или более длинные заголовки. Вертикальная навигация наиболее часто встречается вдоль левой стороны
+                            веб-страницы. Навигация с правой стороны тоже может быть эффективной, если она разработана правильно.
+                            Боковая панель навигации иногда требуется для второй панели кнопок, например, для подразделов основного раздела,
+                            расположенного в горизонтальной панели верхней части страницы.
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="hide-nav">
+                <div class="container">
+                    <h2>Скрытая навигация</h2>
+                    <div class="wrapper">
+                        <div class="nav">
+                            <a href="#" class="nav__trigger">
+                                <div class="bars"></div>
+                            </a>
+
+                            <div class="nav__content">
+                                <nav class="nav__list">
+                                    <ul>
+                                        <li class="nav__item"><a href="#">Home</a></li>
+                                        <li class="nav__item"><a href="#">About</a></li>
+                                        <li class="nav__item"><a href="#">Team</a></li>
+                                        <li class="nav__item"><a href="#">Contact</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+
+                        <div class="content">
+                            <h1>Side Menu Animation</h1>
+                            <h4>By: <a href="http://kylebrumm.com" target="_blank">Kyle Brumm</a></h4>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="dropdown-navigation">
+                <div class="container">
+                    <h2>Выпадающее меню</h2>
+
+                </div>
+            </section>
+
         </div>
+
+
 
     </main>
 </div>

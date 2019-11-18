@@ -1,19 +1,26 @@
 @import "//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css";
 @import "https://fonts.googleapis.com/css?family=Titillium+Web:300";
 .vnav {
+  height: 100vh;
+  background: linear-gradient(to right, white 45%, #ff8a00 45%);
 
   .flex {
     display: flex;
+    justify-content: space-between;
   }
 
   .wrapper {
     position: relative;
-    height: calc(100vh - 112px);
+    height: 70vh;
     margin-top: 0;
   }
 
   .text {
+    align-self: center;
+    margin-top: -20px;
+    width: 50%;
     margin-left: 70px;
+    text-align: right;
   }
 
 

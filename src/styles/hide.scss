@@ -1,4 +1,23 @@
 .hide-nav {
+  height: 100vh;
+  padding-bottom: 50px;
+  overflow: hidden;
+
+  .nav-container {
+      display: block;
+      position: relative;
+      min-height: 50px;
+  }
+
+  .text {
+      display: block;
+  }
+
+  .wrapper {
+
+    position: relative;
+    height: 65vh;
+  }
 
   @function random-color($min: 0, $max: 255, $alpha: 1, $red: null, $green: null, $blue: null) {
     @if $min < 0 {
@@ -177,7 +196,8 @@
     visibility: hidden;
     transform: translate(-50%, -50%);
     transition: 0s linear 0.25s;
-    max-height: calc(100vh - 112px);
+    height: 60vh;
+    max-height: 60vh;
 
     &.is-active {
       visibility: visible;
