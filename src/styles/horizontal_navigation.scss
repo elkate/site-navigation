@@ -1,14 +1,22 @@
 
 .hnav {
-    height: 100vh;
+    min-height: 100vh;
+    height: auto;
     background: #e9edf5;
-    position: relative;
 
     .text {
         margin-bottom: 20px;
     }
 
+    .wrapper {
+        min-height: 320px;
+
+        position: relative;
+        overflow-x: auto;
+    }
+
     .Navigation{
+        min-width: 800px;
         height: 50px;
         padding: 0;
         margin: 20px 0 0 -10px;
