@@ -5,23 +5,29 @@
 
 <body>
 <div class="main-page">
+    <a href="#site-menu" class="menu-link">МЕНЮ</a>
     <header class="main-header">
         <h1>Навигационная система сайта</h1>
         <p>здесь различные навигационные системы веб&#8209;сайтов и&nbsp;примеры их реализации</p>
         <a href="#main" class="main-link"></a>
     </header>
     <main id="main">
-        <section class="site-menu">
+        <section class="site-menu" id="site-menu">
             <div class="container">
-                <h2>Что вы хотите посмотреть?</h2>
-                <ul class="main-list">
-                    <li class="main-list-item"><a href="function-navigation.html" >Теория</a></li>
-                    <li class="main-list-item"><a href="function-navigation.html">Виды</a></li>
-                    <li class="main-list-item"><a href="function-navigation.html">Примеры</a></li>
-                </ul>
+                <h2>Разделы</h2>
+                    <ul class="main-list">
+                        <li class="main-list-item"><a href="#theory" >Теория</a></li>
+                        <li class="main-list-item">Примеры</li>
+                        <ol>
+                            <li><a href="#hnav" >Горизонтальная навигация</a></li>
+                            <li><a href="#vnav" >Вертикальная навигация</a></li>
+                            <li><a href="#hide-nav" >Скрытая навигация</a></li>
+                            <li><a href="#dropdown" >Выпадающее меню</a></li>
+                        </ol>
+                    </ul>
             </div>
         </section>
-        <section class="theory">
+        <section class="theory" id="theory">
             <div class="container">
                 <h2>Навигационные системы веб-сайтов</h2>
                 <p>По своим функциям система навигации делится на следующие виды:</p>
@@ -45,7 +51,7 @@
             </div>
         </section>
         <div class="example">
-            <section class="hnav">
+            <section class="hnav" id="hnav">
                 <div class="container nav-container">
                     <h2>Горизонтальная навигация</h2>
                     <div>
@@ -53,7 +59,7 @@
                         расположения главного меню. Этот тип навигации состоит из горизонтального списка разделов сайта, обычно
                         именуемых одним или двумя словами каждый. Он может быть создан с графикой или прямым текстом HTML.
                     </div>
-                    <div id="Navigation">
+                    <div class="wrapper" id="Navigation">
                         <ul class="Navigation">
                             <li><a href="#">Home</a></li>
                             <li><a href="#">About</a></li>
@@ -72,7 +78,7 @@
                     </div>
                 </div>
             </section>
-            <section class="vnav">
+            <section class="vnav" id="vnav">
                 <div class="container">
                     <h2>Вертикальная навигация</h2>
                     <div class="flex">
@@ -179,7 +185,7 @@
                     </div>
                 </div>
             </section>
-            <section class="hide-nav">
+            <section class="hide-nav" id="hide-nav">
                 <div class="container">
                     <h2>Скрытая навигация</h2>
                     <div class="wrapper">
@@ -207,7 +213,7 @@
                     </div>
                 </div>
             </section>
-            <section class="dropdown-navigation">
+            <section class="dropdown-navigation" id="dropdown">
                 <div class="container">
                     <h2>Выпадающее меню</h2>
 
