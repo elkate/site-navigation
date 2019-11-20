@@ -48,6 +48,15 @@
       margin: 0 auto;
     }  
   }
+  .ruls{
+      background-color: azure;
+      &__list {
+          list-style: disc;
+          &-item{
+             padding: 5px 0; 
+          }
+      }
+  }
 }
 
 
