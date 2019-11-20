@@ -41,16 +41,17 @@
 
       &::before {
         @media (min-width: 1200px) {
-          content: "НАДО БЫ СЮДА КАРТИНКУ";
+          content: " ";
           color: white;
           font-size: 30px;
           padding: 30px 30px;
           top: 0;
-          width: 55vw;
+          width: 100vh;
           height: 100%;
           right: 0;
           position: absolute;
-          background-color: #4E567E;
+          background: url(../img/img-menu.jpg) no-repeat;
+          background-size: contain;
         }
       }
 
