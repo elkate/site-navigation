@@ -37,6 +37,16 @@
     &-item {
       padding: 5px 0;
     }
+    &-img{    
+      display: block;
+      width: 50%;
+      margin: 20px auto;
+    } 
+    &-img-hierarchical{
+      display: block;
+      width: 30%;  
+      margin: 0 auto;
+    }  
   }
 }
 
