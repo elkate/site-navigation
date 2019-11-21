@@ -1,6 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Lato:400);
 
 .dropdown-navigation {
+    padding-bottom: 50px;
     * {
         box-sizing: border-box;
     }
@@ -16,6 +17,22 @@
         font-family: "Lato", sans-serif;
         font-size: 2.4rem;
         height: 100vh;
+    }
+
+    h2 {
+        margin-bottom: 50px;
+        position: relative;
+
+        &::after {
+            content: "";
+            position: absolute;
+            height: 4px;
+            bottom: -8px;
+            left: 0;
+            width: 320px;
+            background-color: $orange;
+        }
+
     }
 
     .navigation-menu__bars,
