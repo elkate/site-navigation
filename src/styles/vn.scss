@@ -7,13 +7,14 @@
   padding-bottom: 30px;
 
   @media (max-width: 600px) {
-    background: linear-gradient(to bottom, white 65%, #ff8a00 65%);
+    background: white;
   }
 
   h2 {
     @media (max-width: 600px) {
       text-align: left!important;
       font-size: 1.5rem;
+      border-bottom: 4px solid $orange;
     }
   }
 
