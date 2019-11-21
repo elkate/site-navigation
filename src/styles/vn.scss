@@ -4,11 +4,27 @@
   min-height: 100vh;
   height: auto;
   background: linear-gradient(to right, white 45%, #ff8a00 45%);
+  padding-bottom: 30px;
+
+  @media (max-width: 600px) {
+    background: linear-gradient(to bottom, white 65%, #ff8a00 65%);
+  }
+
+  h2 {
+    @media (max-width: 600px) {
+      text-align: left!important;
+      font-size: 1.5rem;
+    }
+  }
 
   .flex {
     display: flex;
     min-height: 400px;
     justify-content: space-between;
+
+    @media (max-width: 600px) {
+      flex-wrap: wrap;
+    }
   }
 
   .wrapper {
@@ -16,6 +32,11 @@
     min-height: 400px;
     height: auto;
     margin-top: 0;
+
+    @media (max-width: 600px) {
+      max-height: 460px;
+      width: 100%;
+    }
   }
 
   .text {
@@ -25,6 +46,14 @@
     margin-left: 70px;
     text-align: right;
     padding-bottom: 50px;
+
+    @media (max-width: 600px) {
+      margin-top: 40px;
+      margin-left: 0;
+      width: 100%;
+      text-align: left;
+      padding-bottom: 0;
+    }
   }
 
 

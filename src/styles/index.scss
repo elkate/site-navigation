@@ -4,6 +4,17 @@
   font-family: Rubik, Tahoma, sans-serif;
   overflow-x: hidden;
   position: relative;
+  font-size: 1.2rem;
+
+  @media (max-width: 1200px) {
+    font-size: 1rem;
+  }
+
+  @media (max-width: 600px) {
+      font-size: 0.8rem;
+  }
+
+
 
 
   .menu-link {
@@ -27,6 +38,10 @@
     //text-transform: uppercase;
     color: $text;
     margin-bottom: 50px;
+
+    @media (max-width: 600px) {
+      text-align: center;
+    }
   }
 
   .site-menu {
@@ -37,6 +52,10 @@
     padding-bottom: 80px;
     position: relative;
 
+    @media (max-width: 600px) {
+      text-align: center;
+      margin: 0;
+    }
 
       &::before {
         @media (min-width: 1200px) {
@@ -58,6 +77,10 @@
       margin-top: -10px;
       list-style: none;
       font-size: 20px;
+
+      @media (max-width: 600px) {
+        padding-left: 0;
+      }
     }
 
     .main-list-item {
@@ -84,6 +107,11 @@
 
     ol {
       list-style: none;
+
+      @media (max-width: 600px) {
+        padding-left: 0;
+        font-size: 1rem;
+      }
     }
 
     ol a {
@@ -120,6 +148,10 @@
     color: #e9edf5;
     font-size: 2.5rem;
     animation: fade-in-top 1s ease-in-out both;
+
+    @media (max-width: 600px) {
+      font-size: 1.5rem;
+    }
   }
 
   p {
@@ -129,6 +161,10 @@
     margin-top: 20px;
     width: 360px;
 
+    @media (max-width: 600px) {
+      width: 250px;
+      font-size: 0.6rem;
+    }
   }
 
   .main-link {

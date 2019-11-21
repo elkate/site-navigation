@@ -5,6 +5,13 @@
   overflow: hidden;
   background: $bg-light;
 
+  h2 {
+    @media (max-width: 600px) {
+      text-align: left!important;
+      font-size: 1.5rem;
+    }
+  }
+
   .nav-container {
       display: block;
       position: relative;
