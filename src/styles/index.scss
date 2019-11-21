@@ -18,16 +18,15 @@
   }
 
   .main-header {
-    background: #100e17;
+    background: $text;
   }
 
   h2 {
     padding-top: 60px;
     font-weight: 700;
     //text-transform: uppercase;
-    color: #100e17;
+    color: $text;
     margin-bottom: 50px;
-    //color: #ff8a00;
   }
 
   .site-menu {
@@ -56,32 +55,45 @@
       }
 
     .main-list {
-
+      margin-top: -10px;
       list-style: none;
       font-size: 20px;
     }
 
     .main-list-item {
-      padding: 6px 0;
+      padding: 3px 0;
+      padding-bottom: 20px;
+
+      p {
+        font-weight: 600;
+      }
 
       a {
         text-decoration: none;
         color: #100e17;
-        transition: color 0.1s;
+        border-bottom: 1px solid #100e17;
+        transition: color 0.1s, border-color 0.1s;
 
         &:hover {
           color: #ff8a00;
+          border-color: #ff8a00;
         }
 
       }
     }
 
+    ol {
+      list-style: none;
+    }
+
     ol a {
       text-decoration: none;
       color: #100e17;
-      transition: color 0.1s;
+      border-bottom: 1px solid #100e17;
+      transition: color 0.1s, border-color 0.1s;
 
       &:hover {
+        border-color: #ff8a00;
         color: #ff8a00;
       }
     }

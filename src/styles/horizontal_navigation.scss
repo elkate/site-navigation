@@ -2,10 +2,15 @@
 .hnav {
     min-height: 100vh;
     height: auto;
-    background: #e9edf5;
+    background: $text;
+
+    h2 {
+        color: $bg-light!important;
+    }
 
     .text {
         margin-bottom: 20px;
+        color: $bg-light;
     }
 
     .wrapper {

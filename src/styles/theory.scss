@@ -11,7 +11,7 @@
   }
 
   b {
-    color: #100e17;
+    color: $text;
     font-weight: 600;
   }
 
@@ -26,37 +26,80 @@
       bottom: -8px;
       left: 0;
       width: 614px;
-      background-color: #ff8a00;
+      background-color: $orange;
     }
 
   }
 
-  .theory__list {
-    list-style: none;
+}
 
-    &-item {
-      padding: 5px 0;
-    }
-    &-img{    
-      display: block;
-      width: 50%;
-      margin: 20px auto;
-    } 
-    &-img-hierarchical{
-      display: block;
-      width: 30%;  
-      margin: 0 auto;
-    }  
+.theory__list {
+  list-style: none;
+
+  &-item {
+    padding: 5px 0;
   }
-  .ruls{
-      background-color: azure;
-      &__list {
-          list-style: disc;
-          &-item{
-             padding: 5px 0; 
-          }
-      }
+  &-img{
+    display: block;
+    width: 50%;
+    margin: 20px auto;
+  }
+  &-img-hierarchical{
+    display: block;
+    width: 30%;
+    margin: 0 auto;
   }
 }
 
+.structure {
 
+  h2 {
+    margin-bottom: 50px;
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      height: 4px;
+      bottom: -8px;
+      left: 0;
+      width: 460px;
+      background-color: $orange;
+    }
+
+  }
+
+}
+
+
+.nav-elements {
+  background: $bg-light;
+  margin-bottom: 0;
+  padding-bottom: 30px;
+
+  h2 {
+    margin-bottom: 50px;
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      height: 4px;
+      bottom: -8px;
+      left: 0;
+      width: 632px;
+      background-color: $orange;
+    }
+
+  }
+}
+
+.ruls{
+
+  &__list {
+    list-style: disc;
+    &-item{
+      padding: 5px 0;
+    }
+  }
+}
