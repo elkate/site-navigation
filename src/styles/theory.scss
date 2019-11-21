@@ -5,6 +5,10 @@
   &__criteria {
     list-style: none;
 
+    @media (max-width: 650px) {
+      padding-left: 0;
+    }
+
     li {
       padding: 5px 0;
     }
@@ -19,14 +23,22 @@
     margin-bottom: 50px;
     position: relative;
 
-    &::after {
-      content: "";
-      position: absolute;
-      height: 4px;
-      bottom: -8px;
-      left: 0;
-      width: 614px;
-      background-color: $orange;
+    @media (min-width: 650px) {
+      &::after {
+        content: "";
+        position: absolute;
+        height: 4px;
+        bottom: -8px;
+        left: 0;
+        width: 614px;
+        background-color: $orange;
+      }
+    }
+
+    @media (max-width: 650px) {
+      text-align: left;
+      font-size: 1.5rem;
+      border-bottom: 4px solid $orange;
     }
 
   }
@@ -35,15 +47,24 @@
 
 .theory__list {
   list-style: none;
+  @media (max-width: 650px) {
+    padding-left: 0;
+  }
 
   &-item {
     padding: 5px 0;
   }
+
   &-img{
     display: block;
     width: 50%;
     margin: 20px auto;
+
+    @media (max-width: 600px) {
+      width: 100%;
+    }
   }
+
   &-img-hierarchical{
     display: block;
     width: 30%;
@@ -57,15 +78,24 @@
     margin-bottom: 50px;
     position: relative;
 
-    &::after {
-      content: "";
-      position: absolute;
-      height: 4px;
-      bottom: -8px;
-      left: 0;
-      width: 460px;
-      background-color: $orange;
+    @media (min-width: 600px) {
+      &::after {
+        content: "";
+        position: absolute;
+        height: 4px;
+        bottom: -8px;
+        left: 0;
+        width: 460px;
+        background-color: $orange;
+      }
     }
+
+    @media (max-width: 600px) {
+      text-align: left;
+      font-size: 1.5rem;
+      border-bottom: 4px solid $orange;
+    }
+
 
   }
 
@@ -81,14 +111,22 @@
     margin-bottom: 50px;
     position: relative;
 
-    &::after {
-      content: "";
-      position: absolute;
-      height: 4px;
-      bottom: -8px;
-      left: 0;
-      width: 632px;
-      background-color: $orange;
+    @media (min-width: 600px) {
+      &::after {
+        content: "";
+        position: absolute;
+        height: 4px;
+        bottom: -8px;
+        left: 0;
+        width: 632px;
+        background-color: $orange;
+      }
+    }
+
+    @media (max-width: 600px) {
+      text-align: left;
+      font-size: 1.5rem;
+      border-bottom: 4px solid $orange;
     }
 
   }
@@ -98,6 +136,10 @@
 
   &__list {
     list-style: disc;
+    @media (max-width: 600px) {
+      padding-left: 18px;
+    }
+
     &-item{
       padding: 5px 0;
     }

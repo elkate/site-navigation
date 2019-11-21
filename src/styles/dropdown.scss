@@ -23,14 +23,21 @@
         margin-bottom: 50px;
         position: relative;
 
-        &::after {
-            content: "";
-            position: absolute;
-            height: 4px;
-            bottom: -8px;
-            left: 0;
-            width: 320px;
-            background-color: $orange;
+        @media (max-width: 600px) {
+            text-align: left!important;
+            font-size: 1.5rem;
+            border-bottom: 4px solid $orange;
+        }
+        @media (min-width: 600px) {
+            &::after {
+                content: "";
+                position: absolute;
+                height: 4px;
+                bottom: -8px;
+                left: 0;
+                width: 320px;
+                background-color: $orange;
+            }
         }
 
     }
