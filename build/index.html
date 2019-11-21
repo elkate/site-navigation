@@ -1,0 +1,509 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Rubik:400,500,700&display=swap&subset=cyrillic" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/main.css">
+    <title>Навигационная система</title>
+</head>
+
+<body>
+<div class="main-page">
+    <a href="#site-menu" class="menu-link">МЕНЮ</a>
+    <header class="main-header">
+        <h1>Навигационная система сайта</h1>
+        <p>здесь различные навигационные системы веб&#8209;сайтов и&nbsp;примеры их реализации</p>
+        <a href="#main" class="main-link"></a>
+    </header>
+    <main id="main">
+        <section class="site-menu" id="site-menu">
+            <div class="container">
+                <h2>Разделы</h2>
+                    <ul class="main-list">
+                        <li class="main-list-item"><p>Теория</p>
+                            <ol>
+                                <li><a href="#theory" >Навигационные системы веб-сайтов</a></li>
+                                <li><a href="#structure" >Структура навигации сайта</a></li>
+                                <li><a href="#nav-elements" >Основные элементы навигации сайта</a></li>
+                            </ol>
+                        </li>
+
+                        <li class="main-list-item">
+                            <p>Примеры</p>
+                            <ol>
+                                <li><a href="#hnav" >Горизонтальная навигация</a></li>
+                                <li><a href="#vnav" >Вертикальная навигация</a></li>
+                                <li><a href="#hide-nav" >Скрытая навигация</a></li>
+                                <li><a href="#dropdown" >Выпадающее меню</a></li>
+                            </ol>
+                        </li>
+                    </ul>
+            </div>
+        </section>
+        <section class="theory" id="theory">
+            <div class="container">
+                <h2>Навигационные системы веб-сайтов</h2>
+                <p>
+                    Навигация сайта – это возможность перехода между его страницами.
+                    Чем проще и понятнее навигационная система, тем лучше для посетителей,
+                    поскольку она позволяет находить требуемую информацию и быстро
+                    ориентироваться в разделах сайта.
+                </p>
+                <p>Критерии качественной навигации:</p>
+                <ul class="theory__criteria">
+                    <li>
+                        <b>Простота</b> – все элементы меню или пользовательского интерфейса должны быть хорошо видимыми и
+                        интуитивно понятными для любого пользователя. В идеале, чтобы пройти к любой странице или
+                        разделу сайта, пользователю должно понадобиться не более 3 кликов.
+                    </li>
+                    <li>
+                        <b>Доступность на любой странице сайта</b> – качественно проработанные элементы навигации должны
+                        присутствовать на каждой из страниц сайта, чтобы у пользователя была возможность перейти
+                        из любого раздела в необходимый.
+                    </li>
+                    <li>
+                        <b>Графическое оформление</b> – элементы навигация должна быть контрастны фону и отличаться
+                        от основного текста, но при этом гармонировать с общим дизайном ресурса.
+
+                    </li>
+                </ul>
+                <p>
+                    От соблюдения данных параметров, при создании сайта во многом зависит
+                    его дальнейшая судьба, так как проект с неудобной навигацией не будет
+                    привлекать пользователей. Удобная навигация по сайту является частью
+                    работы над юзабилити – удобством использования сайта по ряду основных признаков.
+                </p>
+                <p>По своим функциям система навигации делится на следующие виды:</p>
+                <ul class="theory__list">
+                    <li class="theory__list-item"><b>Языковая</b> – навигация, отвечающая за языковой интерфейс и отображение контента на выбранном пользователем языке</li>
+                    <li class="theory__list-item"><b>Основная</b> – это наиболее важные разделы сайта, как правило меню.</li>
+                    <li class="theory__list-item"><b>Глобальная</b> – это те ссылки, которые должны быть видны с любой страницы сайта, например ссылка на главную.</li>
+                    <li class="theory__list-item"><b>Рекламная</b> – ссылки для привлечения посетителей на рекламные страницы сайта с расположением товаров и услуг</li>
+                    <li class="theory__list-item"><b>Тематическая</b> – навигация по страницам сайта одной определенной тематики (рубрики)</li>
+                    <li class="theory__list-item"><b>Текстовая</b> – гиперссылки из текста на странице. С точки зрения юзабилити, они нужны для направления пользователя к упомянутому в тексте материалу. С точки зрения оптимизации – это грамотная перелинковка сайта</li>
+                    <li class="theory__list-item"><b>Указательная</b> – по-другому, справочная. Гиперссылка указывает, в какой области сайта сейчас находится посетитель</li>
+                    <li class="theory__list-item"><b>Географическая</b> – используется на сайтах, где имеются разделы, посвященные разным странам</li>
+                </ul>
+                <p>По визуальному оформлению выделяют следующие виды навигации:</p>
+                <ul class="theory__list">
+                    <li class="theory__list-item"><b>Текстовая</b> – совпадает с определением текстовой в функциональном плане. Это, пожалуй, самый древний вид навигации.</li>
+                    <li class="theory__list-item"><b>Графическая</b> – сейчас наиболее популярный вид навигации с графическим отображением, применяется для всех видов функциональной навигации.</li>
+                    <li class="theory__list-item"><b>HTML-формы</b> – помогают в экономии места с помощью выпадающих или открывающихся элементов.</li>
+                    <li class="theory__list-item"><b>Java и Flash технологии </b> – с помощью них можно организовать определенную реакцию на действия при наведении курсора, нажатии кнопок мыши или клавиатуры</li>
+                </ul>
+                <p>
+                    В зависимости от тематики, позиционирования сайта, а также от объема информации
+                    на нем, выбирается тот или иной вид навигации. В некоторых случаях варианты
+                    компонуются при необходимости, но обычно владельцы ограничиваются 1-2 видами из
+                    перечисленных. Необходимость использования того или иного типа навигации диктуется
+                    в основном удобством для посетителя при поиске нужной информации.
+                </p>
+            </div>
+        </section>
+        <section class="structure" id="structure">
+            <div class="container">
+                <h2>Структура навигации сайта</h2>
+                <p>Структура (карта) сайта позволяет увидеть как связаны друг с другом все старницы веб-ресурса. Карту можно предствить в виде ориентированного графа, верхушки которого - адреса веб-страниц, а дуги - гиперссылки.</p>
+                <p>Навигация - карта сайта может быть представлена в следующих формах:</p>
+                <ul class="theory__list">
+                    <li class="theory__list-item">
+                        <b>Линейная</b> – все веб-страницы взаимосвязаны друг с другом так, что посещать их можно только в определенном порядке. Движение по сайту предусмотренно только в одну сторону. Возвращаться нельзя.
+                        <img class="theory__list-img" src="img/site-map/line.jpg" alt="line">
+                    </li>
+                    <li class="theory__list-item">
+                        <b>Линейная реверсивная</b> – в данном случае возможно передвижение в обе
+                        стороны: возможен переход на следующую и на предыдущую страницу.
+                        <img class="theory__list-img" src="img/site-map/line-reversal.jpg" alt="line-reversal">
+                    </li>
+                    <li class="theory__list-item">
+                        <b>Кольцевая</b> – линейная структура, где есть возможность
+                        перейти с последней страницы на первую.
+                        <img class="theory__list-img" src="img/site-map/annular.jpg" alt="annular">
+                    </li>
+                    <li class="theory__list-item">
+                        <b>Иерархическая</b> – в данной структуре возможен, например,
+                        переход с пятой страницы во вторую и наоброт. Также бывает тупиковая
+                        иерархия - реверса нет, в таких системах предпологается, что возврат
+                        возможен при помощи соответствующей кнопки браузера.
+                        <img class="theory__list-img-hierarchical" src="img/site-map/hierarchical.jpg" alt="hierarchical">
+                    </li>
+                    <li class="theory__list-item">
+                        <b>Звездообразная</b> – обязательносуществует главная страница,
+                        с которой можно перейти к любой другой. При этом переход с
+                        нецентральной страницы на другую возможен только через основную.
+                        Чтобы перейти с одной крайней веб-страницы на другую крайнюю,
+                        необходимо всего два действия( в некоторых системах действий
+                        может потребоваться больше).
+                        <img class="theory__list-img-hierarchical" src="img/site-map/star-like.jpg" alt="star-like">
+                    </li>
+                    <li class="theory__list-item">
+                        <b>Матричная</b> – данный тип структуры похож на звездообразную,
+                        но в данном случае, чтобы перейти на смежные страницы, требуется меньше шагов.
+                        <img class="theory__list-img-hierarchical" src="img/site-map/matrix.jpg" alt="matrix">
+                    </li>
+                    <li class="theory__list-item">
+                        <b>Полносвязная</b> – каждая веб-страница взаимосвязана с остальными
+                        страницами на сайте. Такая форма навигации может выглядеть как меню,
+                        выполненное в виде отдельного фрейма, который все время присутствует на экране.
+                        <img class="theory__list-img-hierarchical" src="img/site-map/full-connect.jpg" alt="full-connect">
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <section class="nav-elements" id="nav-elements">
+            <div class="container">
+                <h2>Основные элементы навигации сайта</h2>
+                <p>В сознании большинства людей при мысли о навигации всплывает лишь модель, отображаемая в верхней или правой верхней части каждой страницы. Cуществуют и другие многочисленные элементы, связанные с навигацией. Их задача — поддержание прочной структуры веб-ресурса и его адаптация к поисковикам и простым пользователям. Каждый элемент должен помогать посетителю переходить на желаемую страницу и получать информацию. Составляющие сайта, которые применяются для организации качественной навигации:</p>
+                <ul class="theory__list">
+                    <li class="theory__list-item">
+                        <p><b>1. Меню</b></p>
+                        <p>
+                            При разработке навигации основным элементом является меню.
+                            Это панель с размещенными на ней ссылками к главным разделам веб-ресурса.
+                        </p>
+                        <p>
+                            При разработке навигации часто используют меню-гамбургер —
+                            еще один особый прием. Чтобы скрыть категории, применяют
+                            специальный значок в виде трех горизонтальных черт. Такой
+                            показ меню перешел из мобильной разработки. Как правило,
+                            его используют на тех веб-ресурсах, где важна экономия места на главном экране.
+                        </p>
+                        <img class="theory__list-img" src="img/hamburgermenu.jpg" alt="hamburgermenu">
+                        <p>
+                            Меню должно быть оформлено в соответствии с общей стилистикой сайта.
+                            Необходимо выделять важные разделы и активную категорию. Чтобы было
+                            удобнее воспринимать меню, часто пользуются иконками.
+                        </p>
+                    </li>
+                    <li class="theory__list-item">
+                        <p>
+                            <b>2. Логотип и прочие пометки главной страницы</b>
+                        </p>
+                        <p>
+                            Принято добавлять ссылку к главной странице веб-ресурса
+                            на логотип фирмы. Так, пользователь, нажимая на логотип,
+                            сразу переходит на главную. Интернет-аудитория уже привыкла
+                            к такому приему. Кроме того, на веб-сайтах часто используют
+                            иконку дома для перехода на главную страницу. Реже применяют
+                            раздел «Главная» в меню.
+                        </p>
+                        <img class="theory__list-img" src="img/theory-logo.jpeg" alt="theory-logo">
+                    </li>
+                    <li class="theory__list-item">
+                        <p>
+                            <b>3. Иконки</b>
+                        </p>
+                        <p>
+                            Чтобы пользователь мог легче воспринимать информацию, на странице
+                            размещают не текстовые ссылки, а иконки. Чаще всего можно встретить
+                            следующие значки: лупу (поиск), дом (главная страница), сердце
+                            (избранное) и корзину (страница оформления заказа). Их разрабатывают
+                            в единой стилистике и размещают в шапке сайта.
+                        </p>
+                        <p>
+                            Кроме того, с помощью иконок обозначают категории товаров в
+                            интернет-магазинах. Нажимая на значок, пользователь оказывается
+                            в соответствующей категории или карточке товара. Бывает, что иконки
+                            размещают в меню веб-ресурса.
+                        </p>
+                        <img class="theory__list-img" src="img/icons.jpg" alt="icons"></li>
+                    <li class="theory__list-item">
+                        <p>
+                            <b>4. Текстовые ссылки</b>
+                        </p>
+                        <p>
+                            В навигации сайта присутствует еще один элемент
+                            — ссылки на страницы, которые встроены в текст.
+                        </p>
+                        <div class="ruls">
+                            <p>Существуют некоторые правила оформления гиперссылок:</p>
+                            <ul class="ruls__list">
+                                <li class="ruls__list-item">
+                                    ссылки должны быть заметны в тексте.
+                                    Чаще всего их выделяют цветом и подчеркивают;
+                                </li>
+                                <li class="ruls__list-item">
+                                    ссылки в активном состоянии, при наведении
+                                    или нажатии должны быть разных цветов;
+                                </li>
+                                <li class="ruls__list-item">
+                                    если ссылка предусмотрена для действия, неожиданного
+                                    для пользователя, человек должен быть об этом оповещен;
+                                </li>
+                                <li class="ruls__list-item">
+                                    ссылку лучше оформлять не как прямой URL, а скрывать
+                                    ее в текстовом контенте, понятном пользователю.
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="theory__list-item">
+                        <p>
+                            <b>5. Футер</b>
+                        </p>
+                        <p>
+                            Футером, или подвалом, называют область в самом конце
+                            веб-страницы с размещенными на ней ссылками на разделы,
+                            контактами компании, а также ссылками на документацию
+                            и правила пользования сайтом. Футер помогает найти
+                            любой раздел на веб-ресурсе.
+                        </p>
+                        <img class="theory__list-img" src="img/footer.jpg" alt="footer">
+                    </li>
+                    <li class="theory__list-item">
+                        <p>
+                            <b>6. «Хлебные крошки»</b>
+                        </p>
+                        <p>
+                            Так называют вспомогательную навигацию сайта для
+                            пользователей, представляющую собой путь от главной
+                            страницы до текущего раздела. Все элементы данной
+                            строки, за исключением текущей страницы, являются
+                            кликабельными и ведут на соответствующий раздел ресурса.
+                            Нередко текущую страницу опускают и остаются лишь
+                            предшествующие разделы. Такой прием дает пользователю
+                            возможность понять, где он сейчас и как вернуться назад.
+                        </p>
+                        <img class="theory__list-img" src="img/breadcrumbs.jpeg" alt="breadcrumbs">
+                    </li>
+                    <li class="theory__list-item">
+                        <p>
+                            <b>7. Кнопка для возврата</b>
+                        </p>
+                        <p>
+                            При скроллинге появляется сложность: как пользователю
+                            скорее вернуться в начало страницы и не прокручивать
+                            ее по новой? Для устранения этой проблемы предусматривают
+                            кнопки возврата. Они выглядят как стрелки в положении «вверх».
+                        </p>
+                        <img class="theory__list-img" src="img/arrows.jpg" alt="arrows" >
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <div class="example">
+            <section class="hnav" id="hnav">
+                <div class="container nav-container">
+                    <h2>Горизонтальная навигация</h2>
+                    <div class="text">
+                        Горизонтальная навигационная панель в верхней части экрана является наиболее распространенным видом
+                        расположения главного меню. Этот тип навигации состоит из горизонтального списка разделов сайта, обычно
+                        именуемых одним или двумя словами каждый. Он может быть создан с графикой или прямым текстом HTML.
+                    </div>
+                    <div class="wrapper" id="Navigation">
+                        <ul class="Navigation">
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">About</a></li>
+                            <li><a href="#">My Portfolio</a>
+                                <ul>
+                                    <li><a href="#">Web Development</a></li>
+                                    <li><a href="#">Motion Graphics</a></li>
+                                    <li><a href="#">Flash Animation</a></li>
+                                    <li><a href="#">Logo Design</a></li>
+                                    <li><a href="#">Photography</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">Services</a></li>
+                            <li><a href="#">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <section class="vnav" id="vnav">
+                <div class="container">
+                    <h2>Вертикальная навигация</h2>
+                    <div class="flex">
+                        <div class="wrapper">
+                            <nav class="main-menu">
+                                <ul>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa fa-home fa-2x"></i>
+                                            <span class="nav-text">
+                                Главная
+                            </span>
+                                        </a>
+                                    </li>
+                                    <li class="has-subnav">
+                                        <a href="#">
+                                            <i class="fa fa-laptop fa-2x"></i>
+                                            <span class="nav-text">
+                                Компоненты
+                            </span>
+                                        </a>
+
+                                    </li>
+                                    <li class="has-subnav">
+                                        <a href="#">
+                                            <i class="fa fa-list fa-2x"></i>
+                                            <span class="nav-text">
+                                Формы
+                            </span>
+                                        </a>
+
+                                    </li>
+                                    <li class="has-subnav">
+                                        <a href="#">
+                                            <i class="fa fa-folder-open fa-2x"></i>
+                                            <span class="nav-text">
+                                Страницы
+                            </span>
+                                        </a>
+
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa fa-bar-chart-o fa-2x"></i>
+                                            <span class="nav-text">
+                                Графики
+                            </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa fa-font fa-2x"></i>
+                                            <span class="nav-text">
+                               Варианты
+                            </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa fa-table fa-2x"></i>
+                                            <span class="nav-text">
+                                Таблицы
+                            </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa fa-map-marker fa-2x"></i>
+                                            <span class="nav-text">
+                                Карты
+                            </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa fa-info fa-2x"></i>
+                                            <span class="nav-text">
+                                Документация
+                            </span>
+                                        </a>
+                                    </li>
+                                </ul>
+
+                                <ul class="logout">
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa fa-power-off fa-2x"></i>
+                                            <span class="nav-text">
+                                Выход
+                            </span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <div class="text">
+                            Вертикальная навигационная панель также довольно распространена. Она полезна для сайтов, имеющих более полный
+                            список разделов или более длинные заголовки. Вертикальная навигация наиболее часто встречается вдоль левой стороны
+                            веб-страницы. Навигация с правой стороны тоже может быть эффективной, если она разработана правильно.
+                            Боковая панель навигации иногда требуется для второй панели кнопок, например, для подразделов основного раздела,
+                            расположенного в горизонтальной панели верхней части страницы.
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="hide-nav" id="hide-nav">
+                <div class="container">
+                    <h2>Скрытая навигация</h2>
+                    <div class="wrapper">
+                        <div class="nav">
+                            <a href="#" class="nav__trigger">
+                                <div class="bars"></div>
+                            </a>
+
+                            <div class="nav__content">
+                                <nav class="nav__list">
+                                    <ul>
+                                        <li class="nav__item"><a href="#">Home</a></li>
+                                        <li class="nav__item"><a href="#">About</a></li>
+                                        <li class="nav__item"><a href="#">Team</a></li>
+                                        <li class="nav__item"><a href="#">Contact</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+
+                        <div class="content">
+                            <h1>Side Menu Animation</h1>
+                            <h4>By: <a href="http://kylebrumm.com" target="_blank">Kyle Brumm</a></h4>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="dropdown-navigation" id="dropdown">
+                <div class="container">
+                    <h2>Выпадающее меню</h2>
+                    <section class="content">
+                        <p>Выпадающее меню позволяет пользователю перейти не только к основным разделам сайта,
+                            но и ко многим ключевым подразделам. Сайтам, содержащим большое количество контента,
+                            выгодно использовать возможность мега выпадающих списков меню, поскольку при этом не требуется
+                            лишний щелчок мышью.</p>
+                    </section>
+                    <iframe src="https://nisnom.com/demo/angled-menu240817" width="100%" height="460" frameborder="0">
+                    <!DOCTYPE html>
+                    <html>
+
+                    <head>
+                        <meta charset="UTF-8">
+                        <title>Angled Menu</title>
+                        <meta name="viewport" content="width=device-width, initial-scale=1">
+                        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+                        <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+
+                    </head>
+
+                    <body>
+                        <nav class="navigation-menu js-nav-menu">
+                            <div class="navigation-menu__toggle js-nav-menu-toggle">
+                                <span class="navigation-menu__bars"></span>
+                            </div>
+                            <ul class="menu-list">
+                                <li class="menu-list__item">Menu Item 1</li>
+                                <li class="menu-list__item">Menu Item 2</li>
+                                <li class="menu-list__item">Menu Item 3</li>
+                                <li class="menu-list__item">Menu Item 4</li>
+                                <li class="menu-list__item">Menu Item 5</li>
+                            </ul>
+                        </nav>
+                        <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
+                    </body>
+                    </html>
+                </iframe>
+                </div>
+            </section>
+
+        </div>
+
+
+
+    </main>
+</div>
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="../js/main.js"></script>
+</body></html>
