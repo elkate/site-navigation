@@ -218,6 +218,16 @@
     li {
       list-style-type: none;
     }
-
   }
+  @media (max-width: 898px) {
+     padding: 30px 60px;  
+     width: 100%;
+     flex-wrap: wrap;
+     ul{
+         padding: 10 0;
+         display: block;
+         width: 100%;
+         text-align: center;
+     }
+  }    
 }
