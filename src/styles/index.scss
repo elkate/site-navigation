@@ -208,7 +208,16 @@
 .main-footer{
   width: 100vw;
   min-height: 30vw;
-  padding: 40px 15px ;
+  padding:  105px 60px ;
   display: flex;
   justify-content: center;
+  background: $text;
+  color: $bg-light;
+  ul{
+    padding:  15px 60px ;
+    li {
+      list-style-type: none;
+    }
+
+  }
 }
